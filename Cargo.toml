@@ -1,17 +1,18 @@
 [package]
 name = "babydra-greeter"
-edition.workspace = true
-version.workspace = true
+edition = "2021"
+version = "1.0.0"
 
 [dependencies]
-gtk4 = { workspace = true }
-gtk4-layer-shell = { workspace = true }
-tokio = { workspace = true }
-tracing = { workspace = true }
-dirs = { workspace = true }
-glib = { workspace = true }
+babydra-core = { git = "https://github.com/i4104-vn/babydra-core.git", package = "babydra-core", tag = "v1.0.0" }
+babydra-ui-kit = { git = "https://github.com/i4104-vn/babydra-core.git", package = "babydra-ui-kit", tag = "v1.0.0" }
+
+gtk4 = { version = "0.9", features = ["v4_10"] }
+gtk4-layer-shell = "0.4"
+tokio = { version = "1.0", features = ["rt", "rt-multi-thread", "time", "sync", "macros", "process", "fs", "io-util"] }
+tracing = "0.1"
+dirs = "5.0"
+glib = "0.20"
 greetd_ipc = { version = "0.10", features = ["codec"] }
-serde = { workspace = true }
-serde_json = { workspace = true }
-babydra-core = { workspace = true }
-babydra-ui-kit = { workspace = true }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
